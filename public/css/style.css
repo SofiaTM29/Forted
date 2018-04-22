@@ -3,3 +3,8 @@
 .ofrecemos-card{
     max-width: 15rem;
 }
+
+.pieza-card{
+    max-width: 10rem;
+    max-height: 15rem;
+}
