@@ -5,11 +5,13 @@
         <meta http-equiv="X-IA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Forted  </title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Yeseva+One|Inconsolata|Poppins|Abril+Fatface|Cinzel+Decorative|Trocchi" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     
     <style>
@@ -20,7 +22,10 @@
     </style>
     
     <body>
-    <div id="fb-root"></div>
+        <div id="fb-root">
+
+        </div>
+        
         <script>
           (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -33,7 +38,7 @@
         
                                                     <!--  Scroll -->
 
-<button onclick="topFunction()" id="myBtnS"><i class="icon-chevron-up"></i></button>
+        <button onclick="topFunction()" id="myBtnS"><i class="icon-chevron-up"></i></button>
         
         <script>
             window.onscroll = function() {scrollFunction()};
@@ -54,15 +59,16 @@
         
                                                         <!--  Header -->
         <div class="w3-container w3-padding-16 w3-grey">
-                <div class="w3-bar w3-right w3-Trocchi" style="margin-top:10px;margin-right:20px;font-size:16px;">
-                    <img src="img/logo.png" class="w3-display-topleft" style="margin-top:10px;margin-left;width:15%;height:10%;">
-                    <a href="#contacto" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Contacto</b></a>
-                    <a href="#srv" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Servicios</b></a>
-                    <a href="#prod" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Productos</b></a>
-                    <a href="#us" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Nosotros</b></a>
-                </div>
+            <div class="w3-bar w3-right w3-Trocchi" style="margin-top:10px;margin-right:20px;font-size:16px;">
+                <img src="img/logo.png" class="w3-display-topleft" style="margin-top:10px;margin-left;width:15%;height:10%;">
+                <a href="#contacto" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Contacto</b></a>
+                <a href="#srv" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Servicios</b></a>
+                <a href="#prod" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Productos</b></a>
+                <a href="#us" class="w3-mobile w3-bar-item w3-button w3-hover-none w3-border-grey w3-bottombar w3-hover-border-black w3-btn w3-text-black w3-right"><b>Nosotros</b></a>
+            </div>
         </div>
-        <div class="w3-container w3-padding-small w3-theme-d1"> </div>
+        <div class="w3-container w3-padding-small w3-theme-d1"> 
+        </div>
                 
                                                         <!--  Nosotros -->
         
@@ -244,47 +250,49 @@
                 </div>
                 
             </div>
-        </div>
-        
-                                                         <!-- Ofrecemos -->
-        <div id="srv" class="toscew w3-container w3-padding-64 w3-theme-d3">
-        
-            <h1 class="toscew2 w3-xxxlarge w3-center w3-allerta" style="margin-top:-10px;margin-bottom:20px;">Ofrecemos</h1>
-            <div class="toscew2 w3-content w3-row-padding w3-Poppins">
-                <div class="w3-quarter">
-                    <div class="w3-card w3-padding w3-round-large w3-center w3-light-grey" style="width:230px;height:270px;">
-                        <img src="img/quality1.png" class="w3-greyscale-min" style="height:100px">
-                        <h4 class="w3-YesevaOne">Calidad</h4>
-                        <p class="w3-small ">En cada trabajo que realizamos, tomamos en cuenta los detalles de terminación en cada pieza artesanal.</p>
-                    </div>
+        </div> 
+
+
+        <div id="srv" class="toscew w3-container w3-padding-64 w3-theme-d3 flex justify-center">
+            <div class="toscew2 container flex justify-center">
+                <div class="flex flex-col">
+                        <h1 class="toscew2 w3-xxxlarge w3-center w3-allerta" >Ofrecemos</h1>
+                        <div class="flex flex-col md:flex-row items-stretch justify-around text-black">
+                                <div class="flex-1 ofrecemos-card bg-grey-lightest rounded py-2 px-3 mx-2 mt-2 text-center">
+                                    <div class="" >
+                                        <img src="img/quality1.png" class="">
+                                        <h4 class="w3-YesevaOne">Calidad</h4>
+                                        <p class="w3-small ">En cada trabajo que realizamos, tomamos en cuenta los detalles de terminación en cada pieza artesanal.</p>
+                                    </div>
+                                </div>
+                                <div class="flex-1 ofrecemos-card bg-grey-lightest rounded py-2 px-3 mx-2 mt-2 text-center">
+                                    <div class="" >
+                                        <img src="img/service.png" class="w3-greyscale-min" style="height:100px">
+                                        <h4 class="w3-YesevaOne">Servicio</h4>
+                                        <p class="w3-small">Contamos con el personal capacitado, para poder brindar el mejor servicio posible al cliente.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex-1 ofrecemos-card bg-grey-lightest rounded py-2 px-3 mx-2 mt-2 text-center">
+                                    <div class="" >
+                                        <img src="img/ontime.png" class="w3-greyscale-min" style="height:100px">
+                                        <h4 class="w3-YesevaOne">Entregas a tiempo</h4>
+                                        <p class="w3-small">Uno de nuestros principios es entregar nuestros productos a tiempo, sin necesidad de hacer esperar al cliente.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex-1 ofrecemos-card bg-grey-lightest rounded py-2 px-3 mx-2 mt-2 text-center">
+                                    <div class="" >
+                                        <img src="img/idea2.png" class="w3-greyscale-min" style="height:100px">
+                                        <h4 class="w3-YesevaOne">Diseños nuevos</h4>
+                                        <p class="w3-small">Estamos dispuestos a escuchar ideas nuevas o diseños nuevos sobre alguna forja especial, aunque no se maneje en nuestro catálogo.</p>
+                                    </div>
+                                </div>
+                        </div>
                 </div>
                 
-                <div class="w3-quarter">
-                    <div class="w3-card w3-padding w3-round-large w3-center w3-light-grey" style="width:230px;height:270px;">
-                        <img src="img/service.png" class="w3-greyscale-min" style="height:100px">
-                        <h4 class="w3-YesevaOne">Servicio</h4>
-                        <p class="w3-small">Contamos con el personal capacitado, para poder brindar el mejor servicio posible al cliente.</p>
-                    </div>
-                </div>
-                
-                <div class="w3-quarter">
-                    <div class="w3-card w3-padding w3-round-large w3-center w3-light-grey" style="width:230px;height:270px;">
-                        <img src="img/ontime.png" class="w3-greyscale-min" style="height:100px">
-                        <h4 class="w3-YesevaOne">Entregas a tiempo</h4>
-                        <p class="w3-small">Uno de nuestros principios es entregar nuestros productos a tiempo, sin necesidad de hacer esperar al cliente.</p>
-                    </div>
-                </div>
-                
-                <div class="w3-quarter">
-                    <div class="w3-card w3-padding w3-round-large w3-center w3-light-grey" style="width:230px;height:270px;">
-                        <img src="img/idea2.png" class="w3-greyscale-min" style="height:100px">
-                        <h4 class="w3-YesevaOne">Diseños nuevos</h4>
-                        <p class="w3-small">Estamos dispuestos a escuchar ideas nuevas o diseños nuevos sobre alguna forja especial, aunque no se maneje en nuestro catálogo.</p>
-                    </div>
-                </div>
             </div>
-        </div>
-        
+        </div>    
                                                             <!-- Contacto -->
          <div class="w3-container w3-padding" style="margin-top:-50px;margin-bottom:50px;">
         
@@ -315,7 +323,6 @@
                 </form>
            </div>
         </div>
-        
         
                                                           <!-- Pie de pag -->
         <footer id="footer">
