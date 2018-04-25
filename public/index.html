@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Yeseva+One|Inconsolata|Poppins|Abril+Fatface|Cinzel+Decorative|Trocchi" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Yeseva+One|Inconsolata|Abril+Fatface|Cinzel+Decorative|Trocchi" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
@@ -77,13 +77,13 @@
             <div class="w3-content">
                 <div class="w3-half w3-padding">
                     <img class="w3-round" src="img/Fondo.jpg" style="width:380px;height:180px;margin:10px 0 0 40px;">
-                    <p class="w3-padding w3-Poppins" style="text-align:justify;"><strong>FORTED</strong> es una empresa mexicana, la cual cuenta con 10 años de experiencia en el mercado. Los productos que se manejan en nuestro catálogo son piezas de acero forjado artesanal, hechas en base a los requerimientos del cliente y del mercado.</p>
+                    <p class="w3-padding" style="text-align:justify;"><strong>FORTED</strong> es una empresa mexicana, la cual cuenta con 10 años de experiencia en el mercado. Los productos que se manejan en nuestro catálogo son piezas de acero forjado artesanal, hechas en base a los requerimientos del cliente y del mercado.</p>
                 </div>
                 <div class="w3-half">
                     <h2 class="w3-center w3-padding w3-YesevaOne">Misión</h2>
-                    <p class="w3-padding w3-Poppins" style="text-align:justify;"> Crecer en el mercado local de productos de forja ornamental, con un precio altamente competitivo y de máxima calidad, mediante un equipo de trabajo comprometido y la Ingeniería aplicada. </p>
+                    <p class="w3-padding" style="text-align:justify;"> Crecer en el mercado local de productos de forja ornamental, con un precio altamente competitivo y de máxima calidad, mediante un equipo de trabajo comprometido y la Ingeniería aplicada. </p>
                     <h2 class="w3-center w3-padding w3-YesevaOne">Visión</h2>
-                    <p class="w3-padding w3-Poppins" style="text-align:justify;">Ser el lider de fabricación de forja en el país, cubriendo las necesidades de nuestros clientes ofreciendo la mejor calidad, con el mejor servicio y precio competitivo. </p>
+                    <p class="w3-padding" style="text-align:justify;">Ser el lider de fabricación de forja en el país, cubriendo las necesidades de nuestros clientes ofreciendo la mejor calidad, con el mejor servicio y precio competitivo. </p>
                 </div>
             </div>
         </div>
@@ -102,8 +102,8 @@
                                                         <!--  Poductos -->
         <div class="w-full flex flex-col text-center pb-8">
             <h1 class="w3-center w3-xxxlarge w3-allerta mt-8"> Productos</h1>
-            <p class="w3-center w3-Poppins text-lg mt-8" > Nuestra especialidad es fabricar piezas de acero forjado,</p>
-            <p class="w3-center w3-Poppins text-lg" > garantizamos que nuestros productos son 100% artesanales y de excelente calidad.</p>
+            <p class="w3-center text-lg mt-8" > Nuestra especialidad es fabricar piezas de acero forjado,</p>
+            <p class="w3-center text-lg" > garantizamos que nuestros productos son 100% artesanales y de excelente calidad.</p>
         
         </div>
 
@@ -384,35 +384,39 @@
             </div>
         </div>    
                                                             <!-- Contacto -->
-         <div class="w3-container w3-padding" style="margin-top:-50px;margin-bottom:50px;">
-        
+         <div class="w3-container">
             <h2 class="w3-center w3-padding w3-xxxlarge w3-allerta" style="margin-bottom:20px;">Pregunta por tu cotización</h2>
              
              <div class="w3-content w3-rowpadding" style="width:50%; margin:10px auto 40px auto">
-                <p class="w3-center w3-Poppins w3-large"> Si requieres de alguna cotización con gusto te antenderemos, solo envíanos un correo y te responderemos lo mas pronto posible.
+                <p class="w3-center w3-large"> Si requieres de alguna cotización con gusto te antenderemos, solo envíanos un correo y te responderemos lo mas pronto posible.
                 </p>
              </div>
              
-             <div class="contactForm">
-            <form method="post" action="send_form.php" class="w3-container w3-card w3-light-grey w3-text-black" style="width:39%; margin:0 auto 40px auto">
-                    <input type="hidden" name="action" value="submit">
-                    <div class="w3-padding">
-                        <label class="w3-YesevaOne" name="name">Nombre:</label><br>
-                            <input name="name" type="text" value="" size="49" style="width:100%;" required><br>
-                        <label class="w3-YesevaOne" name="email">E-mail:</label><br>
-                            <input name="email" type="text" value="" size="49" style="width:100%;" required><br>
-                        <label class="w3-YesevaOne" name="phone">Teléfono:</label><br>
-                            <input name="phone" type="text" value="" size="49" style="width:100%;" required><br>
-                        <label class="w3-YesevaOne" name="msg"> Consulta:</label><br>
-                            <textarea name="msg" rows="10" cols="50" style="width:100%;" required></textarea><br>
-                        <p class="w3-center">
-                            <input type="submit" class="w3-button w3-section w3-black w3-ripple w3-YesevaOne" name="submit" value="Enviar">
-                        </p>
-                     </div>
-                        <div class="clear"></div>
-                </form>
-           </div>
+             <div class="flex">
+                <div class="w-full bg-grey-lighter rounded shadow-lg p-8 m-4 mb-8 md:max-w-sm md:mx-auto">
+                    <form class="mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="post">
+                      <div class="flex flex-col mb-4 md:w-full">
+                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="nombre">Nombre</label>
+                        <input class="border py-2 px-3 text-grey-darkest md:mr-2" type="text" name="nombre" id="nombre">
+                      </div>
+                      <div class="flex flex-col mb-4 md:w-full">
+                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="email">Email</label>
+                        <input class="border py-2 px-3 text-grey-darkest md:mr-2" type="email" name="email" id="email">
+                      </div>
+                      <div class="flex flex-col mb-4 md:w-full">
+                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="tel">Teléfono</label>
+                        <input class="border py-2 px-3 text-grey-darkest md:mr-2" type="tel" name="tel" id="tel">
+                      </div>
+                      <div class="flex flex-col mb-6 md:w-full">
+                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="consulta">Consulta</label>
+                        <input class="border py-2 px-3 text-grey-darkest md:mr-2" type="text" name="consulta" id="consulta">
+                      </div>
+                    <button class="block bg-black hover:bg-grey-dark text-white uppercase font-bold mx-auto p-3 rounded" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
         </div>
+
         
                                                           <!-- Pie de pag -->
         <footer id="footer">
