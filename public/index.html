@@ -109,14 +109,15 @@
 
         <div class="w-full flex justify-center pb-8">
             <div class="container py-8 flex flex-wrap px-6 justify-around md:justify-start">
-                <div class="pieza-card shadow-md py-2 px-4 text-center mx-2 my-2">
-                    <div class="">
+                <div class="pieza-card shadow-md py-2 px-4 mx-2 my-2">
                     <img src="img/hf01.png" class="-my-4 w3-opacity-min w3-hover-opacity-off">
-                        <div class="py-2">
-                            <p class="py-8"><strong>HF01</strong><br>
-                               Forja "Caracol" de 12" de largo hecho de cuadrado de 1/2".
-                            </p>
-                        </div>
+                    <div class="flex flex-col" >
+                        <p class="self-center text-lg font-bold mb-2" >HF01</p>
+                        <p class="mt-2" >Forja <span class="italic">Caracol</span></p>
+                        <p class="text-sm text-grey-darker mt-1" >Tama&ntilde;o:</p>
+                        <p>12"</p>
+                        <p class="text-sm text-grey-darker mt-1">Material:</p>
+                        <p>Cuadrado 1/2"</p>
                     </div>
                 </div>
                 <div class="pieza-card shadow-md py-2 px-4 text-center mx-2 my-2">
@@ -392,27 +393,43 @@
                 </p>
              </div>
              
-             <div class="flex">
+             <div class="flex ">
                 <div class="w-full bg-grey-lighter rounded shadow-lg p-8 m-4 mb-8 md:max-w-sm md:mx-auto">
                     <form class="mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="post">
-                      <div class="flex flex-col mb-4 md:w-full">
-                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="nombre">Nombre</label>
-                        <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="text" name="nombre" id="nombre">
-                      </div>
-                      <div class="flex flex-col mb-4 md:w-full">
-                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="email">Email</label>
-                        <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="email" name="email" id="email">
-                      </div>
-                      <div class="flex flex-col mb-4 md:w-full">
-                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="tel">Teléfono</label>
-                        <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="tel" name="tel" id="tel">
-                      </div>
-                      <div class="flex flex-col mb-6 md:w-full">
-                        <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="consulta">Consulta</label>
-                        <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="text" name="consulta" id="consulta">
-                        <input type="file" id="myFile" class="py-2">
-                      </div>
-                    <button class="block bg-black hover:bg-grey-dark text-white uppercase font-bold mx-auto p-3 rounded" type="submit">Enviar</button>
+                        <div class="flex flex-col mb-4 md:w-full">
+                            <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="nombre">Nombre</label>
+                            <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="text" name="nombre" id="nombre">
+                        </div>
+                        <div class="flex flex-col mb-4 md:w-full">
+                            <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="email">Email</label>
+                            <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="email" name="email" id="email">
+                        </div>
+                        <div class="flex flex-col mb-4 md:w-full">
+                            <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="tel">Teléfono</label>
+                            <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="tel" name="tel" id="tel">
+                        </div>
+                        <div class="flex flex-col mb-6 md:w-full">
+                            <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="consulta">Consulta</label>
+                            <textarea class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" rows="5" type="text" name="consulta" id="consulta"></textarea>    
+                        </div>
+                        <div class="flex flex-col justify-end  md:w-full">
+                            <label for="subirArchivi" class="bg-grey hover:bg-grey-dark py-1 px-2 mb-2 w-48 self-end uppercase text-center tracking-wide text-grey-darkest mt-2" >Anexar Foto</label>
+                            <div id="nombresArchivos" class=""></div>
+                            <script>
+                                var fileList = document.getElementById("nombresArchivos")
+                                function processFileName( fileInput ){
+                                    fileList.innerHTML = null;
+                                    var files = fileInput.files;
+                                    for (var i = 0; i < files.length; i++) {
+                                        fileLabel = document.createElement("p");
+                                        fileLabel.innerHTML = files[i].name;
+                                        fileList.appendChild(fileLabel);
+                                    }
+                                }
+                            </script>
+                            <input multiple onchange="processFileName(this)" id="subirArchivi" hidden type="file">
+                            <button class="block bg-black hover:bg-grey-dark text-white uppercase font-bold self-end mx-auto p-3 mt-6 rounded" type="submit">Enviar</button>
+                        </div>
                     </form>
                 </div>
             </div>
