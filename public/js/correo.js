@@ -24,7 +24,7 @@ const telefonoRequerido = document.getElementById("telefonoRequerido")
 const correoRequerido = document.getElementById("correoRequerido")
 
 function sendIfValid(){
-    corrVal = emailInput.value != ""
+    corrVal = isValidMail( emailInput.value  )
     telVal = telefonoInput.value != ""
     nomVal = nombreInput.value != ""
     consVal = consultaInput.value != ""
@@ -37,6 +37,11 @@ function sendIfValid(){
         correoRequerido.hidden = ( corrVal || telVal ) ? true : false
         return false
     }
+}
+
+function isValidMail( correo ){
+    regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return regex.test( correo ) 
 }
 
 function hideRequerido(){
