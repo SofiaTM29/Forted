@@ -12,6 +12,21 @@
         <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Yeseva+One|Inconsolata|Abril+Fatface|Cinzel+Decorative|Trocchi" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            // TODO: Replace with your project's customized code snippet
+            var config = {
+                apiKey: "AIzaSyAhBg8_C632h4TKedLbSwS9876I68bSlJs",
+                authDomain: "forted-2992.firebaseapp.com",
+                databaseURL: "https://forted-2992.firebaseio.com"
+            };
+            var app = firebase.initializeApp(config);
+            var storage = app.storage()
+            var database = app.database()
+        </script>
+
     </head>
     
     <style>
@@ -417,21 +432,25 @@
              
              <div class="flex ">
                 <div class="w-full bg-grey-lighter rounded shadow-lg p-8 m-4 mb-8 md:max-w-sm md:mx-auto">
-                    <form class="mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="post">
+                    <form class="mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="post" id="formaCorreo">
                         <div class="flex flex-col mb-4 md:w-full">
                             <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="nombre">Nombre</label>
+                            <label class="text-xs text-red-light bold" id="nombreRequerido" hidden >Este campo es requerido</label>
                             <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="text" name="nombre" id="nombre">
                         </div>
                         <div class="flex flex-col mb-4 md:w-full">
                             <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="email">Email</label>
-                            <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="email" name="email" id="email">
+                            <label class="text-xs text-red-light bold" id="correoRequerido" hidden >Correo o el Telefono es requerido</label>
+                            <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2"  type="email" name="email" id="email">
                         </div>
                         <div class="flex flex-col mb-4 md:w-full">
                             <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="tel">Teléfono</label>
+                            <label class="text-xs text-red-light bold" id="telefonoRequerido" hidden >Correo o el Telefono es requerido</label>
                             <input class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" type="tel" name="tel" id="tel">
                         </div>
                         <div class="flex flex-col mb-6 md:w-full">
                             <label class="mb-2 uppercase tracking-wide font-bold text-grey-darkest" for="consulta">Consulta</label>
+                            <label class="text-xs text-red-light bold" id="consultaRequerido" hidden >Este campo es requerido</label>
                             <textarea class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" rows="5" type="text" name="consulta" id="consulta"></textarea>    
                         </div>
                         <div class="flex flex-col justify-end  md:w-full">
@@ -450,7 +469,8 @@
                                 }
                             </script>
                             <input multiple onchange="processFileName(this)" id="subirArchivi" hidden type="file">
-                            <button class="block bg-black hover:bg-grey-dark text-white uppercase font-bold self-end mx-auto p-3 mt-6 rounded" type="submit">Enviar</button>
+                            <button onclick="enviarCorreo()" id="enviarButton" class="block bg-black hover:bg-grey-dark text-white uppercase font-bold self-end mx-auto p-3 mt-6 rounded" type="button">Enviar</button>
+                            <p id="enviadoSpan" class="block bg-green-dark text-white uppercase font-bold self-end mx-auto p-3 mt-6 rounded" hidden >Cotización Enviada!</p>
                         </div>
                     </form>
                 </div>
@@ -499,5 +519,6 @@
                   &copy;Forted 2018. Derechos Reservados.
                 </div>
         </footer>
+        <script src="js/correo.js" defer ></script>
     </body>
 </html>
