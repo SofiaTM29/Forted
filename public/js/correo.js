@@ -9,6 +9,8 @@ function something(userId, name, email, imageUrl){
 }
 const forma = document.getElementById("formaCorreo")
 
+var telefonoValue = ""
+
 const enviarButton = document.getElementById("enviarButton")
 const enviadoSpan = document.getElementById("enviadoSpan")
 
@@ -42,6 +44,28 @@ function sendIfValid(){
 function isValidMail( correo ){
     regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return regex.test( correo ) 
+}
+
+function telefonoInputChar( evnt ){
+    appendIfValidNumber(evnt.key)
+    formatTelefono()
+
+}
+
+function formatTelefono(){
+    x = "("+ telefonoValue.slice(0, 3) + ")"+ " " + telefonoValue.slice(3, 7) + " " + telefonoValue.slice(7, 10) 
+    setTimeout(()=>{
+        telefonoInput.value = x
+    }, 50)
+    
+}
+function appendIfValidNumber( char ){
+    if( !isNaN( char ) && telefonoValue.length < 10 ){
+        telefonoValue = telefonoValue + Number(char)
+    }
+    if( char == "Backspace" ){
+        telefonoValue = telefonoValue.slice(0, -1)
+    }
 }
 
 function hideRequerido(){
