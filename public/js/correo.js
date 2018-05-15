@@ -89,7 +89,7 @@ function loLograste(){
 
 function enviarCorreo(){
     if( sendIfValid() ){
-        nuevaConsulta = database.ref('consulta').push({
+        nuevaConsulta = database.ref('consultas').push({
             nombre: nombreInput.value,
             email: emailInput.value,
             telefono : telefonoInput.value,
