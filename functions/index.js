@@ -31,27 +31,15 @@ const mailTransport = nodemailer.createTransport({
 });
 
 // Sends an email confirmation when a user changes his mailing list subscription.
-exports.sendEmailConfirmation = functions.database.ref('/consultas/{uid}').onWrite((change) => {
-  const snapshot = change.after;
-  const val = snapshot.val();
-
-  if (!snapshot.changed('subscribedToMailingList')) {
-    return null;
-  }
-
+exports.sendEmailConfirmation = functions.database.ref('/consultas').onWrite((change) => {
+  
   const mailOptions = {
-    from: '"Spammy Corp." <noreply@firebase.com>',
+    from: '"Forted" <dev.sam23d@gmail.com>',
     to: "dev.sam23d@gmail.com",
   };
-
-  const subscribed = val.subscribedToMailingList;
-
   // Building Email message.
-  mailOptions.subject = subscribed ? 'Thanks and Welcome!' : 'Sad to see you go :`(';
-  mailOptions.text = subscribed ?
-      'Thanks you for subscribing to our newsletter. You will receive our next weekly newsletter.' :
-      'I hereby confirm that I will stop sending you the newsletter.';
-
+  mailOptions.subject = 'Thanks and Welcome!';
+  mailOptions.text = 'Thanks you for subscribing to our newsletter. You will receive our next weekly newsletter.';
   return mailTransport.sendMail(mailOptions)
     .then(() => console.log(`New ${subscribed ? '' : 'un'}subscription confirmation email sent to:`,
         val.email))
