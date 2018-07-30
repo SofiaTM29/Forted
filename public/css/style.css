@@ -9,3 +9,10 @@
     max-height: 24rem;
 }
 
+.zoom{
+     transition: transform 1s;
+}
+
+.zoom:hover { 
+    transform: scale(2); 
+}

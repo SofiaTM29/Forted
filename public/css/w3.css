@@ -228,43 +228,38 @@ img {
     height: auto;
 }
 
-.w3-allerta {
-    font-family: "Allerta Stencil", Sans-serif;
+.w3-Raleway {
+    font-family: 'Raleway', sans-serif;;
 }
 
-.w3-YesevaOne{
-    font-family: 'Yeseva One', cursive;
-}
-
-.w3-AlegreyaSC{
-    font-family: 'Alegreya SC', serif;
-}
-
-.w3-Inconsolata{
-    font-family: 'Inconsolata', monospace;
-}
-
-.w3-AbrilFatface{
-    font-family: 'Abril Fatface', cursive;
-}
-
-.w3-CinzelDecorative{
-    font-family: 'Cinzel Decorative', cursive;
-}
-
-.w3-Trocchi{
-    font-family: 'Trocchi', serif;
-    
+.w3-Quicksand{
+    font-family: 'Quicksand', sans-serif;
 }
 
 .nav a{
     border-bottom-color: #E8E8E8;
 }
 
+div a{
+    display:inline-block;
+}
+
+a:hover {
+    font-weight:bold;
+}
+a::after {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
 #myBtnS {
   display: none;
   position: fixed;
-  bottom: 60px;
+  bottom: 40px;
   right: 30px;
   z-index: 99;
   width: 40px;
@@ -274,9 +269,9 @@ img {
   background-color: darkgrey;
   color: white;
   cursor: pointer;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  
 }
 
 #myBtnS:hover {
