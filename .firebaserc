@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "forted-2992"
+    "default": "forted-2992",
+    "prod": "forted-2992"
   }
 }
