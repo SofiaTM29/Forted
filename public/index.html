@@ -452,7 +452,7 @@
                             <textarea class="shadow border rounded py-2 px-3 text-grey-darkest md:mr-2" rows="5" type="text" name="consulta" id="consulta"></textarea>    
                         </div>
                         <div class="flex flex-col justify-end  md:w-full">
-                            <label for="subirArchivi" class="bg-grey hover:bg-grey-dark py-1 px-2 mb-2 w-48 self-end uppercase text-center tracking-wide text-grey-darkest mt-2" >Anexar Foto</label>
+                            <!--label for="subirArchivi" class="bg-grey hover:bg-grey-dark py-1 px-2 mb-2 w-48 self-end uppercase text-center tracking-wide text-grey-darkest mt-2" >Anexar Foto</label>
                             <div id="nombresArchivos" class=""></div>
                             <script>
                                 var fileList = document.getElementById("nombresArchivos")
@@ -465,7 +465,7 @@
                                         fileList.appendChild(fileLabel);
                                     }
                                 }
-                            </script>
+                            </script-->
                             <input multiple onchange="processFileName(this)" id="subirArchivi" hidden type="file">
                             <button onclick="enviarCorreo()" id="enviarButton" class="block bg-black hover:bg-grey-dark text-white uppercase font-bold self-end mx-auto p-3 mt-6 rounded" type="button">Enviar</button>
                             <p id="enviadoSpan" class="block bg-green-dark text-white uppercase font-bold self-end mx-auto p-3 mt-6 rounded" hidden >Cotización Enviada!</p>

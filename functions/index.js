@@ -17,6 +17,10 @@
 
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
+const sparkPostTransport = require('nodemailer-sparkpost-transport');
+
+
+
 // Configure the email transport using the default SMTP transport and a GMail account.
 // For other types of transports such as Sendgrid see https://nodemailer.com/transports/
 // TODO: Configure the `gmail.email` and `gmail.password` Google Cloud environment variables.
@@ -30,8 +34,48 @@ const mailTransport = nodemailer.createTransport({
   },
 });
 
+
+var options = {
+  sparkPostApiKey : "7e68909263335bb9f859ef039d03a2bff6febac4"
+}
+
+const transporter = nodemailer.createTransport(sparkPostTransport({
+  'sparkPostApiKey': '7e68909263335bb9f859ef039d03a2bff6febac4'
+}))
+
+exports.sendEmailConfirmation = functions.database.ref('/consultas/{uuid}').onWrite((event) => {
+
+  console.log( event )
+  var snapshot = event.after.val() 
+
+  var email_content = `
+    <p>Nombre de contacto: ${ snapshot.nombre }</p>
+    <p>Responder al correo: ${ snapshot.email }</p>
+    <p>O al telefono: ${ snapshot.telefono }</p>
+    <p>consulta:</p>
+    ${ snapshot.consulta }
+  ` 
+  console.log( email_content )
+  transporter.sendMail({
+    from: 'consulta@forted.com.mx',
+    to: 'forjasforted@gmail.com',
+    subject: `Consulta de ${ snapshot.nombre }`,
+    text: 'Plain text',
+    html: email_content
+  }, function(err, info) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(info);
+    }
+  });
+
+  return "OK"
+
+})
+
 // Sends an email confirmation when a user changes his mailing list subscription.
-exports.sendEmailConfirmation = functions.database.ref('/consultas').onWrite((change) => {
+/*exports.sendEmailConfirmation = functions.database.ref('/consultas').onWrite((change) => {
   
   const mailOptions = {
     from: '"Forted" <dev.sam23d@gmail.com>',
@@ -45,3 +89,4 @@ exports.sendEmailConfirmation = functions.database.ref('/consultas').onWrite((ch
         val.email))
     .catch((error) => console.error('There was an error while sending the email:', error));
 });
+*/
